@@ -1,16 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-          Time to build the blog!
-      </header>
+    <div className="App ">
+      Time to build the blog!
+      <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+      </div>
     </div>
   );
 }
