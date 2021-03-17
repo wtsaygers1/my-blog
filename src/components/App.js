@@ -16,8 +16,15 @@ class App extends Component {
     this.state = {
       clicked: 0
     }
+    // best practice is to do everything in the constructor b/c easier to reuse
+    // a method
+    this.clickHandler = this.clickHandler.bind(this)
   }
 
+  clickHandler(e){
+    // this.setState is the only way to modify the state of your component
+    this.setState({clicked: this.state.clicked + 1})
+  }
 
   render() {
     return (
@@ -33,6 +40,15 @@ class App extends Component {
       <div>
         clicked: {this.state.clicked}
       </div>
+      <button 
+        type="button" 
+        className="btn btn-primary" 
+        // another way to do what we did in the constructor
+        // onClick={this.clickHandler.bind(this)}
+        onClick={this.clickHandler}
+        >
+        click me!
+        </button>
       </div>
     )
   }
