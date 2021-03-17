@@ -2,26 +2,26 @@ import React from "react";
 
 function Header(props) {
 
-  if(props.nerd){
-    console.log(`he is a nerd`)
-  } else {
-    console.log(`he is not a nerd`)
-  }
 
   console.log(props)
   return (
-    // a way to put html elements next to each other in React
-    // <React.Fragment>
-    // <> and </> are short hand for Reach.Fragment
-    <>
-      <h1>
-        Hello {props.name}
-      </h1>
-      <h3>
-        {props.name} is {props.age} years old
-    </h3>
-    {/* </React.Fragment> */}
-    </>
+    <ul className="nav nav-pills">
+      <li className="nav-item">
+        <a className="nav-link active">{props.pages[0]}</a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link">{props.pages[1]}</a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link">{props.pages[2]}</a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link">{props.pages[3]}</a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link">{props.pages[4]}</a>
+      </li>
+    </ul>
   )
 }
 
