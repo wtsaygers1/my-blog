@@ -6,9 +6,15 @@ class App extends Component {
 
   constructor() {
     super();
-    this.pages = ["Home", "About Me", "Blog", "Images", "Links"];
+    this.pages = [
+      { readableName: "Home", url: "home" },
+      { readableName: "About Me", url: "about-me" },
+      { readableName: "Blog", url: "blog" },
+      { readableName: "Images", url: "images" },
+      { readableName: "Links", url: "links" }
+    ];
     this.state = {
-      currentPage: 1
+      currentPage: 0
     }
     this.setPage = this.setPage.bind(this)
   }
@@ -24,7 +30,9 @@ class App extends Component {
         pages={this.pages}
         currentPage={this.state.currentPage}
         setPage={this.setPage}
-        />
+      >
+        unformatted text
+       </Header>
       </div>
     )
   }
