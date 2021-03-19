@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from "./Header";
+import Image from "./Image";
 
 
 class App extends Component {
@@ -64,9 +65,8 @@ class App extends Component {
         currentPage={this.state.currentPage}
         setPage={this.setPage}
         name={this.state.name}
-      >
-        unformatted text
-       </Header>
+      />
+       <Image />
       </div>
     )
   }

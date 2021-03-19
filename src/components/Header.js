@@ -28,11 +28,10 @@ function Header(props) {
             )
           })
         }
-        <div className="btn btn-secondary">
+        {/* <div className="btn btn-secondary">
           {props.children}
-        </div>
+        </div> */}
       </ul>
-      {props.name}
     </>
   )
 }
