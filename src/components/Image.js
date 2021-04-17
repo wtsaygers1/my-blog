@@ -1,45 +1,34 @@
-import React, { Component } from "react"
+import React, { useState, useEffect } from "react"
 import axios from "axios";
 
-export class Image extends Component {
-    constructor(props) {
-        super();
-        this.state = {
-            imageData: {}
-        }
-    }
-
-    componentDidMount() {
-
+function Image(){
+    const [imageData, setImageData] = useState({})
+    
+    const axiosGet = () => {
         let apiURL = "https://api.unsplash.com"
-
-        let this_ = this;
-        // const axiosData = 
         axios.get(apiURL + "/photos/random" + "/?client_id=svE0EXf_AAIAfNA7wxkZPOADF8UlYZP12NmMyyoGses")
             .then(function (response) {
                 // handle success
-                // return response.data
-                console.log(response.data)
-                this_.setState({ imageData: response.data })
-            })
+                setImageData(response.data)
+    })
             .catch(function (error) {
                 // handle error
                 console.log(error);
             })
     }
 
-    render() {
+    useEffect(axiosGet, [])
+
         return (
             <div className="row">
             <div className="col">
-                {(Object.keys(this.state.imageData).length > 0)
-                    ? <img className="image-fluid" src={this.state.imageData.urls.small} />
+                {(Object.keys(imageData).length > 0)
+                    ? <img className="image-fluid" src={imageData.urls.small} />
                     : <div>image loading...</div>
                 }
             </div>
             </div>
         )
     }
-}
 
 export default Image
