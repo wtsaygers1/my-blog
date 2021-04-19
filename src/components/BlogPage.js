@@ -1,12 +1,15 @@
 import React from 'react';
 import blogData from './blogData.json';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
 
 function BlogPage({ children }) {
 
     let { pageNum } = useParams();
-    console.log({ pageNum });      
-   
+    
+    let history = useHistory();
+    let location = useLocation();
+    console.log({ pageNum, history, location })
+
     return (
         <div className='row'>
             <div className='col'>

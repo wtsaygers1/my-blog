@@ -47,7 +47,7 @@ function App() {
           return (
             <>
             <Link to={`/week/${i}`}>
-              Week {i}
+              Week {i+1}
             </Link>
             {i < blogData.length - 1 && ' - '}
           </>)
@@ -63,7 +63,7 @@ function App() {
         <Route path="/image">
           <Image />
         </Route>
-        <Route path={`/blogpage/:pageNum`}>
+        <Route path={`/week/:pageNum`}>
           <BlogPage page={0}/>
         </Route>
       </Switch>
